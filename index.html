@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bingo</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<div class="app">
+<header>
+  <div><div class="brand">🎱 BINGO</div><div class="sub">FREE PLAY</div></div>
+  <div class="coin">🪙 <span id="coins">1000</span></div>
+</header>
+
+<nav class="tabs">
+ <button class="active" data-page="game">🎮 Game</button>
+ <button data-page="profile">👤 Profile</button>
+ <button data-page="bonus">🎁 Bonus</button>
+</nav>
+
+<main id="game" class="page active">
+ <div class="panel">
+  <div class="section-title"><span>YOUR CARD</span><button id="newCard">New Card</button></div>
+  <div class="labels"><b>B</b><b>I</b><b>N</b><b>G</b><b>O</b></div>
+  <div id="card" class="grid"></div>
+ </div>
+
+ <div class="caller panel">
+   <div class="muted">LAST NUMBER</div>
+   <div id="last" class="last">—</div>
+   <button id="draw" class="primary">🔢 DRAW NUMBER</button>
+   <div id="status">Ready to play.</div>
+ </div>
+
+ <div class="panel">
+   <div class="section-title"><span>CALLED NUMBERS</span><span id="count">0/75</span></div>
+   <div id="history" class="history"></div>
+ </div>
+</main>
+
+<main id="profile" class="page">
+ <div class="panel profile">
+   <div class="avatar">👤</div>
+   <h2 id="playerName">Player</h2>
+   <div class="stats">
+    <div><b id="wins">0</b><small>Wins</small></div>
+    <div><b id="games">0</b><small>Games</small></div>
+    <div><b id="best">0</b><small>Best</small></div>
+   </div>
+ </div>
+ <div class="panel"><h3>🔗 Invite & Earn</h3><p class="muted">Share your referral link and receive virtual bonus coins.</p><button id="copyInvite" class="secondary">Copy Invite Link</button></div>
+</main>
+
+<main id="bonus" class="page">
+ <div class="panel">
+  <h2>🎁 Daily Bonus</h2><p class="muted">Claim once per day.</p>
+  <div class="bonus-value">+100 🪙</div>
+  <button id="bonusBtn" class="primary">CLAIM BONUS</button>
+  <div id="bonusStatus"></div>
+ </div>
+ <div class="panel"><h3>🪙 Virtual Coins</h3><p class="muted">Coins are for free gameplay only and cannot be deposited, withdrawn, exchanged or redeemed for cash.</p></div>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
